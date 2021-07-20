@@ -9,4 +9,9 @@ class Mahasiswa extends Model
     protected $table    = 'mahasiswa';
     protected $fillable = ['npm', 'nama_mahasiswa', 'tgl_lahir', 'tempat_lahir', 'jenis_kelamin', 'hp', 'alamat'];
     public $timestamps  = false;
+
+    public function user()
+    {
+        return $this->belongsTo(user::class, 'nama_mahasiswa', 'id');
+    }
 }

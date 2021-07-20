@@ -10,7 +10,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        $mahasiswa = Mahasiswa::all();
+        $mahasiswa = Mahasiswa::with(['user'])->get();
         return view('mahasiswa.index', compact('mahasiswa'));
     }
 
